@@ -1,15 +1,15 @@
 :root {
-  --primary: #2bb4a7;
-  --primary-light: #d6f4f1;
-  --dark: #1e2a2f;
-  --text: #333;
-  --bg: #f7fbfb;
+  --primary: #3f8cff;
+  --accent: #1f65cc;
+  --background: #f2f5ff;
+  --text: #222;
+  --sidebar-bg: #ffffff;
 }
 
 body {
   margin: 0;
   font-family: 'Inter', Arial, sans-serif;
-  background: var(--bg);
+  background: var(--background);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
@@ -19,12 +19,12 @@ body {
   min-height: 100vh;
 }
 
+/* SIDEBAR */
 .sidebar {
   width: 320px;
-  background: #fff;
+  background: var(--sidebar-bg);
   padding: 40px 30px;
   border-right: 2px solid var(--primary);
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .sidebar h1 {
@@ -32,7 +32,6 @@ body {
   font-weight: 800;
   margin: 0 0 5px;
   letter-spacing: -0.5px;
-  color: var(--dark);
 }
 
 .sidebar p {
@@ -48,15 +47,24 @@ body {
 .sidebar-section h3 {
   font-size: 14px;
   font-weight: 700;
-  color: var(--primary);
+  opacity: 0.7;
   margin-bottom: 10px;
   letter-spacing: 0.5px;
+  color: var(--accent);
 }
 
-.sidebar-section li {
-  margin-bottom: 5px;
+.sidebar-section ul {
+  padding-left: 18px;
+  margin: 0;
 }
 
+.sidebar-section li,
+.sidebar-section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* CONTENT AREA */
 .content {
   flex: 1;
   padding: 60px;
@@ -67,10 +75,7 @@ body {
   font-size: 26px;
   font-weight: 800;
   margin-top: 0;
-  margin-bottom: 20px;
-  color: var(--dark);
-  border-left: 5px solid var(--primary);
-  padding-left: 12px;
+  color: var(--accent);
 }
 
 .section {
@@ -79,15 +84,15 @@ body {
 
 .job {
   margin-bottom: 28px;
-  background: var(--primary-light);
   padding: 15px 20px;
-  border-radius: 10px;
+  background: #f8faff;
+  border-left: 4px solid var(--primary);
+  border-radius: 6px;
 }
 
 .job-title {
   font-size: 18px;
   font-weight: 700;
-  color: var(--dark);
 }
 
 .job-meta {
@@ -99,22 +104,26 @@ body {
 .job p {
   line-height: 1.6;
   font-size: 15px;
+  max-width: 700px;
 }
 
-@media (max-width: 780px) {
+/* MOBILE FIX — FULLY RESPONSIVE */
+
+@media (max-width: 900px) {
   .layout {
     flex-direction: column;
+    width: 100%;
   }
 
   .sidebar {
     width: 100%;
+    padding: 25px 20px;
     border-right: none;
     border-bottom: 2px solid var(--primary);
-    padding: 30px 25px;
   }
 
   .content {
-    padding: 30px 25px;
+    padding: 25px 20px;
   }
 
   .job {
@@ -127,5 +136,39 @@ body {
 
   .sidebar h1 {
     font-size: 26px;
+  }
+}
+
+/* VERY SMALL PHONES FIX — 430px and below */
+@media (max-width: 430px) {
+  body {
+    font-size: 14px;
+  }
+
+  .sidebar h1 {
+    font-size: 22px;
+  }
+
+  .sidebar p,
+  .sidebar-section p,
+  .sidebar-section li {
+    font-size: 14px;
+  }
+
+  .content h2 {
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  .content {
+    padding: 20px 15px;
+  }
+
+  .job {
+    padding: 10px 14px;
+  }
+
+  .job-title {
+    font-size: 16px;
   }
 }
