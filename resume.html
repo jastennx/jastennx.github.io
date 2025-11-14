@@ -4,197 +4,75 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Your Name — Resume</title>
-  <meta name="description" content="Resume / CV of Your Name — front-end friendly single-file resume website." />
   <style>
-    :root{
-      --bg:#0f1724; /* deep navy */
-      --card:#0b1220;
-      --muted:#98a0b3;
-      --accent:#7dd3fc; /* cyan */
-      --glass: rgba(255,255,255,0.03);
-      --max-width:1100px;
-      --radius:14px;
-      color-scheme: dark;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071023);color:#e6eef8}
-    a{color:var(--accent);text-decoration:none}
-
-    .wrap{max-width:var(--max-width);margin:28px auto;padding:28px}
-
-    header{display:flex;gap:18px;align-items:center}
-    .avatar{width:110px;height:110px;border-radius:16px;flex:0 0 110px;background:linear-gradient(135deg,#123,#246);display:grid;place-items:center;font-weight:700;font-size:28px;color:rgba(255,255,255,0.95)}
-    .headline{flex:1}
-    .headline h1{margin:0;font-size:28px;letter-spacing:0.2px}
-    .headline p{margin:6px 0 0;color:var(--muted)}
-
-    nav{display:flex;gap:10px;align-items:center;margin-top:10px}
-    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;font-weight:600}
-
-    main{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:22px}
-
-    /* left column cards */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
-    h2{margin:0 0 10px;font-size:16px}
-    .muted{color:var(--muted);font-size:14px}
-
-    .about p{line-height:1.55;margin:0;color:#dfe9f6}
-
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.03);font-weight:600;font-size:13px}
-
-    .timeline{display:flex;flex-direction:column;gap:12px}
-    .job{display:flex;gap:14px}
-    .job .meta{min-width:150px;color:var(--muted);font-size:13px}
-    .job .desc{flex:1}
-    .job .desc h3{margin:0 0 6px;font-size:15px}
-    .job .desc p{margin:0;color:#dfe9f6}
-
-    /* right column */
-    aside .card + .card{margin-top:16px}
-    .contact-list{display:flex;flex-direction:column;gap:10px}
-    .meter{height:8px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden}
-    .meter > i{display:block;height:100%}
-
-    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
-
-    /* responsive */
-    @media (max-width:980px){
-      main{grid-template-columns:1fr;}
-      .avatar{display:none}
-    }
-
-    /* print */
-    @media print{
-      body{background:white;color:black}
-      .wrap{max-width:800px;padding:0}
-      header nav, .btn{display:none}
-      .card{background:transparent;box-shadow:none;border:none}
-    }
+    body{margin:0;font-family:Arial, sans-serif;background:#f4f5f7;color:#333;}
+    .wrap{max-width:900px;margin:40px auto;padding:20px;background:#fff;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);}    
+    h1{margin:0;font-size:32px;}
+    h2{margin-top:30px;font-size:22px;border-bottom:2px solid #ddd;padding-bottom:6px;}
+    p{line-height:1.6;}
+    .section{margin-top:20px;}
+    .skills span{display:inline-block;background:#e7e7e7;padding:6px 10px;border-radius:6px;margin:4px 4px 0 0;font-size:14px;}
+    .timeline-item{margin-bottom:18px;}
+    .timeline-item strong{font-size:15px;}
+    footer{text-align:center;margin-top:30px;font-size:13px;color:#555;}
   </style>
 </head>
 <body>
   <div class="wrap">
+
     <header>
-      <div class="avatar" aria-hidden="true">YN</div>
-      <div class="headline">
-        <h1>Your Name</h1>
-        <p class="muted">Front-end Developer • UI/UX Enthusiast • Open to Opportunities</p>
-        <nav>
-          <a class="btn" href="#about">About</a>
-          <a class="btn" href="#experience">Experience</a>
-          <a class="btn" href="#projects">Projects</a>
-          <a class="btn" href="#contact">Contact</a>
-          <a class="btn" href="/resume.pdf" target="_blank" rel="noopener">Download PDF</a>
-        </nav>
-      </div>
+      <h1>Your Name</h1>
+      <p>Front-end Developer • UI/UX Enthusiast</p>
     </header>
 
-    <main>
-      <section>
-        <article id="about" class="card about">
-          <h2>About me</h2>
-          <p>Briefly introduce yourself here. Example: I build accessible, responsive websites and enjoy turning complex problems into simple, beautiful interfaces. Replace this text with your summary, one or two short paragraphs (3–5 lines).</p>
-        </article>
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <p>Write a short introduction about yourself here. This should be 3–5 lines describing your strengths, experience, and goals.</p>
+    </section>
 
-        <article id="experience" class="card" style="margin-top:16px">
-          <h2>Work experience</h2>
-          <div class="timeline">
-            <div class="job">
-              <div class="meta">
-                <div>Company A</div>
-                <div class="muted">Jan 2023 — Present</div>
-              </div>
-              <div class="desc">
-                <h3>Front-end Developer</h3>
-                <p>Describe your responsibilities and achievements. Keep each bullet to a single line when possible. Example: Built and maintained responsive dashboard used by 2k+ monthly users; improved load time by 32%.</p>
-              </div>
-            </div>
+    <section class="section" id="experience">
+      <h2>Work Experience</h2>
 
-            <div class="job">
-              <div class="meta">
-                <div>Company B</div>
-                <div class="muted">Jul 2021 — Dec 2022</div>
-              </div>
-              <div class="desc">
-                <h3>Junior Web Developer</h3>
-                <p>Include measurable accomplishments and technologies used (HTML, CSS, JS, frameworks, tooling).</p>
-              </div>
-            </div>
-          </div>
-        </article>
+      <div class="timeline-item">
+        <strong>Front-end Developer — Company A</strong><br>
+        <em>Jan 2023 – Present</em>
+        <p>Describe your responsibilities and achievements here in short sentences.</p>
+      </div>
 
-        <article id="projects" class="card" style="margin-top:16px">
-          <h2>Selected Projects</h2>
-          <div style="display:grid;gap:12px">
-            <div>
-              <strong>Project Name</strong> <span class="muted">— Personal / Freelance</span>
-              <p class="muted" style="margin:6px 0 0">Short project blurb: what it does, your role, tech used, link (if public).</p>
-            </div>
-            <div>
-              <strong>Another Project</strong> <span class="muted">— School</span>
-              <p class="muted" style="margin:6px 0 0">Short blurb about the project and what made it notable.</p>
-            </div>
-          </div>
-        </article>
+      <div class="timeline-item">
+        <strong>Junior Web Developer — Company B</strong><br>
+        <em>Jul 2021 – Dec 2022</em>
+        <p>Highlight important tasks, skills used, and improvements you contributed.</p>
+      </div>
+    </section>
 
-        <article class="card" style="margin-top:16px">
-          <h2>Education</h2>
-          <div class="timeline">
-            <div class="job">
-              <div class="meta">University Name<br/><span class="muted">2017 — 2021</span></div>
-              <div class="desc"><h3>Bachelor of Science — Computer Science</h3><p class="muted">Include honors, relevant coursework, thesis title (if any).</p></div>
-            </div>
-          </div>
-        </article>
-      </section>
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+      <p><strong>Project Name</strong> — Short description explaining what the project does, your role, and the tools used.</p>
+      <p><strong>Another Project</strong> — Add details and achievements here.</p>
+    </section>
 
-      <aside>
-        <div class="card">
-          <h2>Contact</h2>
-          <div class="contact-list">
-            <div class="muted">Email</div>
-            <div><a href="mailto:you@example.com">you@example.com</a></div>
+    <section class="section" id="education">
+      <h2>Education</h2>
+      <p><strong>University Name</strong><br>Bachelor of Science — Computer Science (2017–2021)</p>
+    </section>
 
-            <div class="muted">Location</div>
-            <div>City, Country</div>
+    <section class="section" id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>Git</span>
+      </div>
+    </section>
 
-            <div class="muted">Phone</div>
-            <div><a href="tel:+1234567890">+1 (234) 567-890</a></div>
-
-            <div class="muted">Links</div>
-            <div><a href="#">GitHub</a> · <a href="#">LinkedIn</a> · <a href="#">Portfolio</a></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Skills</h2>
-          <div class="skills" style="margin-top:10px">
-            <span class="skill">HTML</span>
-            <span class="skill">CSS</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">Responsive Design</span>
-            <span class="skill">Accessibility</span>
-            <span class="skill">Git</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Languages</h2>
-          <div style="margin-top:10px">
-            <div class="muted">English</div>
-            <div class="meter" aria-hidden="true" style="margin:6px 0"><i style="width:92%;background:linear-gradient(90deg,var(--accent),#60a5fa)"></i></div>
-            <div class="muted">Filipino</div>
-            <div class="meter" aria-hidden="true" style="margin:6px 0"><i style="width:85%;background:linear-gradient(90deg,var(--accent),#60a5fa)"></i></div>
-          </div>
-        </div>
-      </aside>
-    </main>
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p>Email: you@example.com<br>Location: Your City<br>Phone: +1 234 567 890</p>
+    </section>
 
     <footer>
-      <div>Made with ❤️ — replace this with your real footer info. — Print-friendly and mobile responsive.</div>
+      <p>© 2025 Your Name — Resume Website</p>
     </footer>
+
   </div>
 </body>
 </html>
