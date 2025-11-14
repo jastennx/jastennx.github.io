@@ -2,76 +2,209 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name — Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chelsea Rommelle B. Montano — Resume</title>
   <style>
-    body{margin:0;font-family:Arial, sans-serif;background:#f4f5f7;color:#333;}
-    .wrap{width:100%;max-width:none;margin:0;padding:40px;border-radius:0;box-shadow:none;background:#fff;}    
-    h1{margin:0;font-size:32px;}
-    h2{margin-top:30px;font-size:22px;border-bottom:2px solid #ddd;padding-bottom:6px;}
-    p{line-height:1.6;}
-    .section{margin-top:20px;}
-    .skills span{display:inline-block;background:#e7e7e7;padding:6px 10px;border-radius:6px;margin:4px 4px 0 0;font-size:14px;}
-    .timeline-item{margin-bottom:18px;}
-    .timeline-item strong{font-size:15px;}
-    footer{text-align:center;margin-top:30px;font-size:13px;color:#555;}
+    :root {
+      --primary: #2bb4a7;
+      --primary-light: #d6f4f1;
+      --dark: #1e2a2f;
+      --text: #333;
+      --bg: #f7fbfb;
+    }
+
+    body{
+      margin:0;
+      font-family:'Inter', Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .layout{
+      display:flex;
+      min-height:100vh;
+    }
+
+    .sidebar{
+      width:320px;
+      background:#fff;
+      padding:40px 30px;
+      border-right:2px solid var(--primary);
+      box-shadow:0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .sidebar h1{
+      font-size:32px;
+      font-weight:800;
+      margin:0 0 5px;
+      letter-spacing:-0.5px;
+      color:var(--dark);
+    }
+
+    .sidebar p{
+      font-size:15px;
+      line-height:1.6;
+      opacity:0.9;
+    }
+
+    .sidebar-section{
+      margin-top:40px;
+    }
+
+    .sidebar-section h3{
+      font-size:14px;
+      font-weight:700;
+      color:var(--primary);
+      margin-bottom:10px;
+      letter-spacing:0.5px;
+    }
+
+    .sidebar-section li{
+      margin-bottom:5px;
+    }
+
+    .content{
+      flex:1;
+      padding:60px;
+      background:#fff;
+    }
+
+    .content h2{
+      font-size:26px;
+      font-weight:800;
+      margin-top:0;
+      margin-bottom:20px;
+      color:var(--dark);
+      border-left:5px solid var(--primary);
+      padding-left:12px;
+    }
+
+    .section{
+      margin-bottom:50px;
+    }
+
+    .job{
+      margin-bottom:28px;
+      background:var(--primary-light);
+      padding:15px 20px;
+      border-radius:10px;
+    }
+
+    .job-title{
+      font-size:18px;
+      font-weight:700;
+      color:var(--dark);
+    }
+
+    .job-meta{
+      font-size:14px;
+      opacity:0.7;
+      margin:4px 0 10px;
+    }
+
+    .job p{
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    @media (max-width: 780px) {
+      .layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid var(--primary);
+        padding: 30px 25px;
+      }
+
+      .content {
+        padding: 30px 25px;
+      }
+
+      .job {
+        padding: 12px 16px;
+      }
+
+      .content h2 {
+        font-size: 22px;
+      }
+
+      .sidebar h1 {
+        font-size: 26px;
+      }
+    }
+
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="layout">
 
-    <header>
-      <h1>Your Name</h1>
-      <p>Front-end Developer • UI/UX Enthusiast</p>
-    </header>
+    <aside class="sidebar">
+      <h1>Chelsea Rommelle B. Montano</h1>
+      <p>Creative Student & Digital Media Enthusiast — Passionate about editing, gaming, photography, and building visual-driven digital content.</p>
 
-    <section class="section" id="about">
-      <h2>About Me</h2>
-      <p>Write a short introduction about yourself here. This should be 3–5 lines describing your strengths, experience, and goals.</p>
-    </section>
-
-    <section class="section" id="experience">
-      <h2>Work Experience</h2>
-
-      <div class="timeline-item">
-        <strong>Front-end Developer — Company A</strong><br>
-        <em>Jan 2023 – Present</em>
-        <p>Describe your responsibilities and achievements here in short sentences.</p>
+      <div class="sidebar-section">
+        <h3>CONTACT</h3>
+        <p>Email: chelsea@example.com<br>
+        Phone: 09XX XXX XXXX<br>
+        Location: Baguio City, Philippines</p>
       </div>
 
-      <div class="timeline-item">
-        <strong>Junior Web Developer — Company B</strong><br>
-        <em>Jul 2021 – Dec 2022</em>
-        <p>Highlight important tasks, skills used, and improvements you contributed.</p>
+      <div class="sidebar-section">
+        <h3>SKILLS</h3>
+        <ul>
+          <li>Photo & Video Editing</li>
+          <li>Creative Direction</li>
+          <li>Basic Graphic Design</li>
+          <li>Photography</li>
+          <li>Content Creation</li>
+          <li>Communication</li>
+          <li>Team Collaboration</li>
+        </ul>
       </div>
-    </section>
 
-    <section class="section" id="projects">
-      <h2>Projects</h2>
-      <p><strong>Project Name</strong> — Short description explaining what the project does, your role, and the tools used.</p>
-      <p><strong>Another Project</strong> — Add details and achievements here.</p>
-    </section>
-
-    <section class="section" id="education">
-      <h2>Education</h2>
-      <p><strong>University Name</strong><br>Bachelor of Science — Computer Science (2017–2021)</p>
-    </section>
-
-    <section class="section" id="skills">
-      <h2>Skills</h2>
-      <div class="skills">
-        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>Git</span>
+      <div class="sidebar-section">
+        <h3>EDUCATION</h3>
+        <p><strong>University of the Cordilleras</strong><br>
+        Bachelor’s Degree (Ongoing)</p>
       </div>
-    </section>
+    </aside>
 
-    <section class="section" id="contact">
-      <h2>Contact</h2>
-      <p>Email: you@example.com<br>Location: Your City<br>Phone: +1 234 567 890</p>
-    </section>
+    <main class="content">
 
-    <footer>
-      <p>© 2025 Your Name — Resume Website</p>
-    </footer>
+      <div class="section">
+        <h2>Professional Summary</h2>
+        <p>Creative and detail-oriented student specializing in digital media and visual content. Skilled in editing, photography, and collaborative projects, with a passion for technology, gaming, and storytelling. Always eager to learn new tools, experiment with design, and contribute to modern digital experiences through creativity and innovation.</p>
+      </div>
+
+      <div class="section">
+        <h2>Work Experience</h2>
+
+        <div class="job">
+          <div class="job-title">Freelance Editor — Independent</div>
+          <div class="job-meta">2023 — Present</div>
+          <p>Worked on small-scale editing projects, producing clean, creative visual content for personal and academic use. Improved workflow efficiency and developed a strong attention to detail in color, composition, and pacing.</p>
+        </div>
+
+        <div class="job">
+          <div class="job-title">Student Assistant / Volunteer Work</div>
+          <div class="job-meta">2022 — 2023</div>
+          <p>Assisted with school tasks, group projects, and event preparations. Developed teamwork, communication, and organizational abilities.</p>
+        </div>
+
+      </div>
+
+      <div class="section">
+        <h2>Projects</h2>
+        <p><strong>Photography Portfolio</strong> — Portraits, landscapes, and event photography showcasing lighting and composition.</p>
+        <p><strong>Video Edits & Montages</strong> — Created gaming highlights and aesthetic edits focused on transitions and storytelling.</p>
+        <p><strong>Mini Graphic Design Set</strong> — Designed posters, layouts, and social media graphics for practice and creativity.</p>
+      </div>
+
+    </main>
 
   </div>
 </body>
