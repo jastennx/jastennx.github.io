@@ -11,7 +11,6 @@ body {
   font-family: 'Inter', Arial, sans-serif;
   background: var(--background);
   color: var(--text);
-  -webkit-font-smoothing: antialiased;
 }
 
 .layout {
@@ -19,12 +18,12 @@ body {
   min-height: 100vh;
 }
 
-/* SIDEBAR */
 .sidebar {
   width: 320px;
   background: var(--sidebar-bg);
   padding: 40px 30px;
   border-right: 2px solid var(--primary);
+  box-sizing: border-box;
 }
 
 .sidebar h1 {
@@ -47,7 +46,7 @@ body {
 .sidebar-section h3 {
   font-size: 14px;
   font-weight: 700;
-  opacity: 0.7;
+  opacity: 0.8;
   margin-bottom: 10px;
   letter-spacing: 0.5px;
   color: var(--accent);
@@ -58,17 +57,17 @@ body {
   margin: 0;
 }
 
-.sidebar-section li,
-.sidebar-section p {
+.sidebar-section li {
   font-size: 14px;
   line-height: 1.5;
 }
 
-/* CONTENT AREA */
 .content {
   flex: 1;
   padding: 60px;
   background: #fff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .content h2 {
@@ -88,6 +87,8 @@ body {
   background: #f8faff;
   border-left: 4px solid var(--primary);
   border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .job-title {
@@ -107,27 +108,31 @@ body {
   max-width: 700px;
 }
 
-/* MOBILE FIX — FULLY RESPONSIVE */
+/* Responsive */
 
 @media (max-width: 900px) {
   .layout {
     flex-direction: column;
     width: 100%;
+    overflow-x: hidden;
   }
 
   .sidebar {
     width: 100%;
+    max-width: 100%;
     padding: 25px 20px;
     border-right: none;
     border-bottom: 2px solid var(--primary);
   }
 
   .content {
+    width: 100%;
+    max-width: 100%;
     padding: 25px 20px;
   }
 
   .job {
-    padding: 12px 16px;
+    padding: 15px;
   }
 
   .content h2 {
@@ -139,25 +144,15 @@ body {
   }
 }
 
-/* VERY SMALL PHONES FIX — 430px and below */
 @media (max-width: 430px) {
-  body {
-    font-size: 14px;
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
-  .sidebar h1 {
-    font-size: 22px;
-  }
-
-  .sidebar p,
-  .sidebar-section p,
-  .sidebar-section li {
-    font-size: 14px;
-  }
-
-  .content h2 {
-    font-size: 20px;
-    padding-left: 10px;
+  .sidebar {
+    padding: 20px 15px;
   }
 
   .content {
@@ -165,10 +160,18 @@ body {
   }
 
   .job {
-    padding: 10px 14px;
+    padding: 12px 12px;
+  }
+
+  .sidebar h1 {
+    font-size: 22px;
   }
 
   .job-title {
     font-size: 16px;
+  }
+
+  .content h2 {
+    font-size: 20px;
   }
 }
